@@ -23,7 +23,7 @@ Please read through the instructions below, I will try to guide you through the 
 
 
 ### Prerequisites
-In order to use this widget you need to have an Home Assistant instance accessible over https.
+In order to use this widget you need to have a Home Assistant instance accessible over https.
 
 As all communication from Garmin watches go thru the mobile device, you also need to have a paired mobile phone, and the Garmin Connect app needs to be running on that phone.
 
@@ -82,7 +82,7 @@ Once you have configured all settings in the ConnectIQ app, the next step will b
 
 ***Note:*** *If you've setup the `Long-Lived access token` you should be logged in automatically and can skip to the next section.*
 
-Since the watch doesn't have an suited interface for logging in to web pages, the login will be performed with the help of your paired smartphone.
+Since the watch doesn't have a suited interface for logging in to web pages, the login will be performed with the help of your paired smartphone.
 
 Before you get started, make sure that you have installed and paired your watch in the [Garmin Connect](https://connect.garmin.com/start/) app.
 
@@ -114,14 +114,14 @@ group:
       - switch.tv
       - script.turn_lights_for_10_min
 ```
-***Note***: *Remember after changing the configuration, you have to either reload the groups or restart the Home Assitant.*
+***Note***: *Remember after changing the configuration, you have to either reload the groups or restart the Home Assistant.*
 
 Then write the id of the group you have just created (in our case `group.garmin`) into the ConnectIQ app widget settings as described [above](#configuration).
 
 Once you have added the group into ConnectIQ app widget settings, open the widget on your Garmin device and access the menu (on watches with touchscreen using the Press and Hold gesture). Then go into `Settings` and select `Refresh entities`.
 Once that is done, all entities added to that group in Home Assistant and supported by HassControl will be imported and available on the watch.
 
-If you done some modification to the group in Home Assistant, you can at any time repeat this procedure to add, update or remove entities from your watch.
+If you have done some modification to the group in Home Assistant, you can at any time repeat this procedure to add, update or remove entities from your watch.
 
 ### FAQ
 
@@ -135,4 +135,3 @@ Not all Home Assistant entity types are currently supported by HassControl, you 
 There is a rare occasion when someone changes state of an entity (for example turns the light on), while you are actively using this widget. In this case its state in your Garmin device will not correspond to its actual one. It has to be synced again. There are three option how to sync it. You either toggle it's state, select `Refresh entities` in `Settings` or reopen the widget (the state of all your entities is automatically received from Home Assistant every time you start the widget).
 
 ***Note***: *Because after predefined timeout period every widget is automatically closed, you should never experience this type of data discrepancy.*
-
